@@ -18,7 +18,7 @@ data "aws_ami" "linux" {
 resource "aws_instance" "jenkins_web" {
   ami           = data.aws_ami.linux.id
   instance_type = "t2.micro"
-  user_data = file("jenkinsinstall.sh")
+  user_data     = file("jenkinsinstall.sh")
   tags = {
     Name = "12wt2mic"
   }

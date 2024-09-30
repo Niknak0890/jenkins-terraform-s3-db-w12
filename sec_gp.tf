@@ -1,5 +1,5 @@
 resource "aws_default_security_group" "default" {
-  vpc_id      = data.aws_vpc.default.id
+  vpc_id = data.aws_vpc.default.id
 
   tags = {
     Name = "allow_jenkins_ssh"
@@ -21,7 +21,7 @@ resource "aws_default_security_group" "default" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-   ingress {
+  ingress {
     description = "allow ssh"
     from_port   = 22
     to_port     = 22
